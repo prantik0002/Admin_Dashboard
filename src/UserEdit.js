@@ -7,7 +7,7 @@ const UserEdit = () => {
     //const [userdata, userdatachange] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:9000/user/" + userid).then((res) => {
+        fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json" + userid).then((res) => {
             return res.json();
         }).then((resp) => {
             idchange(resp.id);
@@ -35,7 +35,7 @@ const UserEdit = () => {
       const userdata={id,name,email,role,active};
       
 
-      fetch("http://localhost:9000/user/"+userid,{
+      fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"+userid,{
         method:"PUT",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(userdata)

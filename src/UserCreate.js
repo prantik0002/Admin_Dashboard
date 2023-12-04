@@ -18,7 +18,7 @@ const UserCreate = () => {
       const userdata={name,email,role,active};
       
 
-      fetch("http://localhost:9000/user",{
+      fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json",{
         method:"POST",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(userdata)

@@ -16,7 +16,7 @@ const UserListing = () => {
     }
     const Removefunction = (id) => {
         if (window.confirm('Do you want to remove?')) {
-            fetch("http://localhost:9000/user/" + id, {
+            fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json" + id, {
                 method: "DELETE"
             }).then((res) => {
                 alert('Removed successfully.')
@@ -32,7 +32,7 @@ const UserListing = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:9000/user").then((res) => {
+        fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json").then((res) => {
             return res.json();
         }).then((resp) => {
             userdatachange(resp);

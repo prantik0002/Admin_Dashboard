@@ -8,7 +8,7 @@ const UserDetail = () => {
     const [userdata, userdatachange] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:9000/user/" + userid).then((res) => {
+        fetch("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json" + userid).then((res) => {
             return res.json();
         }).then((resp) => {
             userdatachange(resp);
